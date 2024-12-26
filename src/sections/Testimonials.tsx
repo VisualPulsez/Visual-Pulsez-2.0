@@ -75,9 +75,16 @@ const testimonials = [
 const firstColumn = testimonials.slice(0, 3);
 const secondColumn = testimonials.slice(3, 6);
 const thirdColumn = testimonials.slice(6, 9);
+type Testimonial = {
+  text: string;
+  imageSrc: string;
+  name: string;
+  username: string;
+  designation: string;
+};
 
 
-const TestimonialCard = ({ text, imageSrc, name, username, designation }) => {
+const TestimonialCard: React.FC<Testimonial> = ({ text, imageSrc, name, username, designation }) => {
   const [ref, inView] = useInView({
     threshold: 0.2,
     triggerOnce: true
@@ -128,11 +135,15 @@ const TestimonialCard = ({ text, imageSrc, name, username, designation }) => {
   );
 };
 
-
-const TestimonialsColumn = ({ className = "", testimonials, duration = 15 }) => {
-  const controls = useAnimationControls();
+type TestimonialsColumnProps = {
+  testimonials: Testimonial[];
+  className?: string;
+  duration?: number;
+};
+const TestimonialsColumn: React.FC<TestimonialsColumnProps> = ({ className = "", testimonials, duration = 15 }) => {
+    const controls = useAnimationControls();
   const [height, setHeight] = useState(0);
-  const columnRef = useRef(null);
+  const columnRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (columnRef.current) {

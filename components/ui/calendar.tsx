@@ -2,8 +2,11 @@
 
 import * as React from "react"
 import { ChevronLeft, ChevronRight } from "lucide-react"
-import { DayPicker } from "react-day-picker"
-
+import { DayPicker , CustomComponents } from "react-day-picker"
+interface ExtendedComponents extends CustomComponents {
+  IconLeft?: React.ComponentType<any>;
+  IconRight?: React.ComponentType<any>;
+}
 import { cn } from "@/lib/utils"
 import { buttonVariants } from "@/../components/ui/button"
 
@@ -54,7 +57,7 @@ function Calendar({
       components={{
         IconLeft: ({ ...props }) => <ChevronLeft className="h-4 w-4" />,
         IconRight: ({ ...props }) => <ChevronRight className="h-4 w-4" />,
-      }}
+      } as ExtendedComponents} // Extend components here
       {...props}
     />
   )
