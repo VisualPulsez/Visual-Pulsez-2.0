@@ -6,7 +6,7 @@ import Image from "next/image";
 import prasad from "@/assets/prasad.jpg";
 import uzair from "@/assets/uzair.jpg";
 import vaishnavi from "@/assets/vaishnavi.jpg";
-// import shantanu from "@/assets/shantanu.jpg";
+import shantanu from "@/assets/shantanu.jpg";
 
 const founders = [
     {
@@ -33,14 +33,14 @@ const founders = [
             "At Visual Pulsez, we ignite your brand's online presence through innovative social media solutions. Our experts craft compelling content, develop tailored strategies, and execute precision-driven campaigns to amplify your reach, engagement, and conversions. Let us help you captivate your audience, drive growth, and leave a lasting impression in the digital&nbsp;landscape.",
         socialLink: "https://linkedin.com/in/clara",
     },
-//     {
-//         name: "Shantanu Kulkarni",
-//         title: "Co-Founder & CTO",
-//         photo: shantanu,
-//         opinion:
-//             "Through Visual Pulsez, we empower businesses to grow by delivering innovative and engaging media marketing solutions. Our platform combines creativity with data-driven strategies to enhance brand visibility, drive customer engagement, and achieve measurable results, helping businesses thrive in the digital age.",
-//         socialLink: "https://linkedin.com/in/david",
-//     },
+    {
+        name: "Shantanu Kulkarni",
+        title: "Co-Founder & CTO",
+        photo: shantanu,
+        opinion:
+            "Through Visual Pulsez, we empower businesses to grow by delivering innovative and engaging media marketing solutions. Our platform combines creativity with data-driven strategies to enhance brand visibility, drive customer engagement, and achieve measurable results, helping businesses thrive in the digital age.",
+        socialLink: "https://linkedin.com/in/david",
+    },
 ];
 
 export const FoundersSection = () => {
