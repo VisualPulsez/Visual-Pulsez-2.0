@@ -196,7 +196,7 @@ export const Footer = () =>
             >
               <Heart className="w-4 h-4 text-red-500" />
             </motion.div>
-            <span>in India</span>
+            <span>By Team Visual Pulsez</span>
           </motion.div>
 
           {/* Additional Links */}

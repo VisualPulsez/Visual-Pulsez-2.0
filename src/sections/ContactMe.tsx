@@ -36,12 +36,12 @@ export const ContactSection = () => {
                 Icon: Phone,
                 title: 'Phone',
                 link: 'tel:+9186694833688',
-                text: '+9186694833688',
+                text: '+9186694833688 +919075435138 +918208183855 +918482813688',
               },
               {
                 Icon: MapPin,
                 title: 'Address',
-                text: 'Khadi Road Near Himalaya Public School, Chhatrapati Sambhajinagar, Maharashtra',
+                text: 'Aditya nagar khadi road Near ellora school beedbyepass Chh sambhajinagar',
               },
             ].map(({ Icon, title, link, text }, index) => (
               <div
@@ -69,9 +69,9 @@ export const ContactSection = () => {
           {/* Social Media Grid */}
           <div className="grid grid-cols gap-6">
             {[
-              { Icon: Github, href: '#github' },
-              { Icon: Linkedin, href: '#linkedin' },
-              { Icon: Instagram, href: '#instagram' },
+              { Icon: Github, href: 'https://github.com/VisualPulsez' },
+              { Icon: Linkedin, href: 'https://www.linkedin.com/company/visualpulsez/' },
+              { Icon: Instagram, href: 'https://www.instagram.com/visual_pulsez?igsh=MWJ1dG1iZWZpYXV4Zw==' },
             ].map(({ Icon, href }, index) => (
               <a
                 key={index}

@@ -15,7 +15,7 @@ const founders = [
         photo: prasad,
         opinion:
             "At Visual Pulsez, we help businesses unlock their full potential through creative and impactful social media strategies. From designing stunning content to running targeted ad campaigns, we ensure your brand stands out and connects with the&nbsp;right&nbsp;audience.",
-        socialLink: "https://linkedin.com/in/alice",
+        socialLink: "http://www.linkedin.com/in/prasad-pawar-b159b62ba",
     },
     {
         name: "Mohammad Uzair",
@@ -23,7 +23,7 @@ const founders = [
         photo: uzair,
         opinion:
             "At Visual Pulsez, we help businesses grow by crafting impactful media marketing strategies that resonate with their audience. By blending creativity, technology, and analytics, we drive meaningful engagement and deliver results that propel brands to new heights.",
-        socialLink: "https://linkedin.com/in/bob",
+        socialLink: "https://www.linkedin.com/in/md-uzair-4507892ba/",
     },
     {
         name: "Vaishnavi Kothawade",
@@ -31,7 +31,7 @@ const founders = [
         photo: vaishnavi,
         opinion:
             "At Visual Pulsez, we ignite your brand's online presence through innovative social media solutions. Our experts craft compelling content, develop tailored strategies, and execute precision-driven campaigns to amplify your reach, engagement, and conversions. Let us help you captivate your audience, drive growth, and leave a lasting impression in the digital&nbsp;landscape.",
-        socialLink: "https://linkedin.com/in/clara",
+        socialLink: "www.linkedin.com/in/vaishnavi-kothawade-030627310",
     },
     {
         name: "Shantanu Kulkarni",
@@ -39,7 +39,7 @@ const founders = [
         photo: shantanu,
         opinion:
             "Through Visual Pulsez, we empower businesses to grow by delivering innovative and engaging media marketing solutions. Our platform combines creativity with data-driven strategies to enhance brand visibility, drive customer engagement, and achieve measurable results, helping businesses thrive in the digital age.",
-        socialLink: "https://linkedin.com/in/david",
+        socialLink: "www.linkedin.com/in/shantanu-kulkarni1229"
     },
 ];
 
