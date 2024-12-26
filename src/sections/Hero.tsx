@@ -47,12 +47,13 @@ export const Hero = () => {
   ];
 
   const [currentFeature, setCurrentFeature] = useState(0);
+  const featuresLength = features.length;
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentFeature((prev) => (prev + 1) % features.length);
     }, 3000);
     return () => clearInterval(interval);
-  }, []);
+  }, [features.length]);
 
   return (
     <motion.section
