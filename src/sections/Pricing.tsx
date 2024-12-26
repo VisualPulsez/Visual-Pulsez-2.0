@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import {
@@ -23,6 +23,8 @@ const pricingTiers = [
     buttonText: "Choose Silver",
     icon: <Star className="w-6 h-6" />,
     gradient: "from-gray-400 via-gray-300 to-gray-400",
+    bgGradient: "from-gray-50 via-white to-gray-100",
+    borderColor: "border-gray-200",
     features: [
       { text: "10 Reels + 10 Posts", icon: <Instagram className="w-5 h-5" /> },
       { text: "Social Media Management", icon: <Globe className="w-5 h-5" /> },
@@ -36,6 +38,8 @@ const pricingTiers = [
     buttonText: "Choose Gold",
     icon: <Crown className="w-6 h-6" />,
     gradient: "from-amber-500 via-yellow-400 to-amber-500",
+    bgGradient: "from-amber-50 via-white to-yellow-100",
+    borderColor: "border-amber-200",
     features: [
       { text: "10 Reels + 15 Posts", icon: <Instagram className="w-5 h-5" /> },
       { text: "Social Media Management", icon: <Globe className="w-5 h-5" /> },
@@ -62,18 +66,32 @@ const pricingTiers = [
       { text: "Personalized Domain", icon: <Globe className="w-5 h-5" /> },
     ],
   },
+  {
+    title: "Custom Enterprise",
+    subtitle: "Tailored to your needs",
+    monthlyPrice: "Custom",
+    buttonText: "Let's Talk",
+    icon: <Sparkles className="w-6 h-6" />,
+    gradient: "from-violet-600 via-purple-500 to-fuchsia-600",
+    special: true,
+    features: [
+      { text: "Custom UI/UX Design", icon: <Star className="w-5 h-5" /> },
+      { text: "Professional Video Editing", icon: <Play className="w-5 h-5" /> },
+      { text: "Custom Web Development", icon: <Globe className="w-5 h-5" /> },
+      { text: "Unlimited Social Media Content", icon: <Instagram className="w-5 h-5" /> },
+      { text: "24/7 Priority Support", icon: <Zap className="w-5 h-5" /> },
+    ],
+  },
 ];
 
 export const Pricing = () => {
-  const [hoveredCard, setHoveredCard] = useState<number | null>(null); // Explicitly typing the state as number or null
+  const [hoveredCard, setHoveredCard] = useState<number | null>(null);
 
   return (
     <section id="pricing" className="py-24 relative overflow-hidden bg-gray-50">
-      {/* Animated Background */}
       <div className="absolute inset-0 bg-gradient-to-b from-purple-50 to-white" />
 
       <div className="container mx-auto px-4 relative">
-        {/* Header Section */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -104,8 +122,7 @@ export const Pricing = () => {
           </p>
         </motion.div>
 
-        {/* Pricing Cards */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
           {pricingTiers.map((tier, index) => (
             <motion.div
               key={index}
@@ -122,12 +139,18 @@ export const Pricing = () => {
                   scale: 1.05,
                   transition: { duration: 0.2 },
                 }}
-                className={`h-full relative overflow-hidden rounded-3xl p-8 bg-white ${
-                  tier.popular
+                className={`h-full relative overflow-hidden rounded-3xl p-8 ${
+                  tier.special
+                    ? "bg-gradient-to-br from-purple-600 to-pink-600 text-white"
+                    : tier.popular
                     ? "bg-gradient-to-br from-purple-900 to-purple-700 text-white"
-                    : "bg-white"
+                    : `bg-gradient-to-br ${tier.bgGradient}`
                 } shadow-lg border-2 ${
-                  tier.popular ? "border-purple-400" : "border-gray-100"
+                  tier.special
+                    ? "border-pink-400"
+                    : tier.popular
+                    ? "border-purple-400"
+                    : tier.borderColor
                 }`}
               >
                 <div className="relative z-10">
@@ -138,35 +161,37 @@ export const Pricing = () => {
                   </div>
                   <h3
                     className={`text-3xl font-bold ${
-                      tier.popular ? "text-white" : "text-gray-900"
+                      tier.special || tier.popular ? "text-white" : "text-gray-900"
                     }`}
                   >
                     {tier.title}
                   </h3>
                   <p
                     className={`text-sm mt-2 ${
-                      tier.popular ? "text-gray-300" : "text-gray-500"
+                      tier.special || tier.popular ? "text-gray-300" : "text-gray-500"
                     }`}
                   >
                     {tier.subtitle}
                   </p>
                   <div className="mt-6 mb-8">
                     <div className="flex items-baseline">
-                      <span className="text-lg">₹</span>
+                      {tier.monthlyPrice !== "Custom" && <span className="text-lg">₹</span>}
                       <span
                         className={`text-5xl font-bold ${
-                          tier.popular ? "text-white" : "text-gray-900"
+                          tier.special || tier.popular ? "text-white" : "text-gray-900"
                         }`}
                       >
                         {tier.monthlyPrice}
                       </span>
-                      <span
-                        className={`text-sm ml-2 ${
-                          tier.popular ? "text-gray-300" : "text-gray-500"
-                        }`}
-                      >
-                        /month
-                      </span>
+                      {tier.monthlyPrice !== "Custom" && (
+                        <span
+                          className={`text-sm ml-2 ${
+                            tier.special || tier.popular ? "text-gray-300" : "text-gray-500"
+                          }`}
+                        >
+                          /month
+                        </span>
+                      )}
                     </div>
                   </div>
 
@@ -175,7 +200,9 @@ export const Pricing = () => {
                       <li key={idx} className="flex items-center gap-3">
                         <span
                           className={`${
-                            tier.popular
+                            tier.special
+                              ? "text-pink-300"
+                              : tier.popular
                               ? "text-purple-300"
                               : "text-purple-500"
                           }`}
@@ -184,7 +211,7 @@ export const Pricing = () => {
                         </span>
                         <span
                           className={`${
-                            tier.popular ? "text-gray-200" : "text-gray-600"
+                            tier.special || tier.popular ? "text-gray-200" : "text-gray-600"
                           }`}
                         >
                           {feature.text}
@@ -195,7 +222,9 @@ export const Pricing = () => {
 
                   <button
                     className={`w-full py-4 rounded-xl font-semibold flex items-center justify-center gap-2 ${
-                      tier.popular
+                      tier.special
+                        ? "bg-white text-pink-600 hover:bg-gray-100"
+                        : tier.popular
                         ? "bg-white text-purple-900 hover:bg-gray-100"
                         : "bg-purple-600 text-white hover:bg-purple-700"
                     }`}

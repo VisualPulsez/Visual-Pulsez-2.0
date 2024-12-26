@@ -22,7 +22,7 @@ const founders = [
         title: "Co-Founder & CFO",
         photo: uzair,
         opinion:
-            "At Visual Pulsez, we help businesses grow by crafting impactful media marketing strategies that resonate with their audience. By blending creativity, technology, and analytics, we drive meaningful engagement and deliver results that propel brands to new heights.",
+            "Turning dreams into actionable strategies and strategies into success. With a passion for creativity and a vision to empower brands, we dream big, execute smart, and grow together—fueling businesses with innovation and impactful solutions.",
         socialLink: "https://www.linkedin.com/in/md-uzair-4507892ba/",
     },
     {

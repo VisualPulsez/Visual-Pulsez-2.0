@@ -8,69 +8,70 @@ import { useInView } from "react-intersection-observer";
 import React, { useState, useEffect, useRef } from "react";
 const testimonials = [
   {
-    text: "Visual Pulsez has revolutionized how our design studio approaches client projects. The intuitive interface perfectly blends traditional Indian design elements with modern functionality.",
+    text: "Thanks to Visual Pulsez, our cafe is now the go-to spot in town. Their creative social media strategies have increased our footfall and made us a favorite among locals.",
     imageSrc: "/api/placeholder/40/40",
-    name: "Priya Sharma",
-    username: "@priyathedesigner",
-    designation: "Creative Director, Design Studios Mumbai"
+    name: "Ravi Malhotra",
+    username: "@raviscafe",
+    designation: "Owner, Cozy Cafe"
   },
   {
-    text: "Being a UI/UX designer from Bangalore, I've used many tools, but Visual Pulsez stands out for its attention to detail and smooth workflow management.",
+    text: "Visual Pulsez helped us transform our small bakery into an online sensation. Their digital marketing efforts have boosted our sales and attracted customers from neighboring areas.",
     imageSrc: "/api/placeholder/40/40",
-    name: "Arjun Mehta",
-    username: "@arjunmehta_designs",
-    designation: "Senior UX Designer"
+    name: "Anjali Verma",
+    username: "@anjalibakes",
+    designation: "Founder, Sweet Cravings Bakery"
   },
   {
-    text: "The AI-powered features in Visual Pulsez have helped our startup deliver projects 40% faster. It's a game-changer for the Indian tech ecosystem.",
+    text: "Our supermarket's digital presence was nonexistent until we partnered with Visual Pulsez. Their targeted campaigns and creative content have made us a household name in our community.",
     imageSrc: "/api/placeholder/40/40",
-    name: "Kavita Reddy",
-    username: "@kavitacreates",
-    designation: "Founder, TechArt Solutions"
+    name: "Manoj Patel",
+    username: "@manojsupershop",
+    designation: "Owner, Patel Supermarket"
   },
   {
-    text: "As a freelancer working with global clients, Visual Pulsez helps me maintain consistency and quality across all my design projects.",
+    text: "Visual Pulsez gave our restaurant a new lease on life by bringing us into the digital era. Their engaging social media content has doubled our weekend reservations.",
     imageSrc: "/api/placeholder/40/40",
-    name: "Rajesh Iyer",
-    username: "@rajeshcreative",
-    designation: "Independent Design Consultant"
+    name: "Kavita Nair",
+    username: "@nairfoodies",
+    designation: "Manager, Spice Villa"
   },
   {
-    text: "The integration of Indian typography and design patterns in Visual Pulsez makes it perfect for creating culturally relevant designs.",
+    text: "We run a small flower shop, and Visual Pulsez has helped us connect with customers online like never before. Their work has brought us visibility and loyal customers.",
     imageSrc: "/api/placeholder/40/40",
-    name: "Neha Gupta",
-    username: "@nehagupta_art",
-    designation: "Art Director"
+    name: "Neha Singh",
+    username: "@nehasblooms",
+    designation: "Owner, Bloom & Petal"
   },
   {
-    text: "Visual Pulsez's collaboration features have made it easier for our pan-India team to work seamlessly on complex design projects.",
+    text: "Our bookstore now gets more visitors than ever, thanks to Visual Pulsez's creative campaigns. They made us realize how powerful a strong online presence can be.",
     imageSrc: "/api/placeholder/40/40",
-    name: "Aditya Patel",
-    username: "@adidesigns",
-    designation: "Design Team Lead"
+    name: "Arjun Khanna",
+    username: "@arjunreads",
+    designation: "Owner, Tales & Chapters Bookstore"
   },
   {
-    text: "The localization features in Visual Pulsez are outstanding. Perfect for creating designs that resonate with both global and local audiences.",
+    text: "As a local grocery shop, we never imagined we’d have an online presence. Visual Pulsez not only made it possible but also brought us a steady increase in online orders.",
     imageSrc: "/api/placeholder/40/40",
-    name: "Zara Khan",
-    username: "@zarakreates",
-    designation: "Brand Designer"
+    name: "Suresh Yadav",
+    username: "@sureshgrocery",
+    designation: "Owner, Fresh Basket"
   },
   {
-    text: "Being able to seamlessly switch between Indian and global design systems has made Visual Pulsez an essential tool in our agency.",
+    text: "Our small restaurant gained a lot of traction after Visual Pulsez revamped our digital strategy. Their creative marketing has made us a must-visit spot in town.",
     imageSrc: "/api/placeholder/40/40",
-    name: "Vikram Singh",
-    username: "@vikramdesigns",
-    designation: "Creative Head"
+    name: "Farah Ahmed",
+    username: "@farahscuisine",
+    designation: "Owner, Farah’s Kitchen"
   },
   {
-    text: "The responsiveness and support from the Visual Pulsez team is exceptional. They truly understand the needs of Indian designers.",
+    text: "Visual Pulsez has helped us create a brand identity online that resonates with our local audience. Their expertise has brought our clothing store into the spotlight.",
     imageSrc: "/api/placeholder/40/40",
-    name: "Ananya Desai",
-    username: "@ananyaarts",
-    designation: "UI Designer"
+    name: "Aditya Mehta",
+    username: "@adityafashion",
+    designation: "Owner, Mehta Fashions"
   }
 ];
+
 
 const firstColumn = testimonials.slice(0, 3);
 const secondColumn = testimonials.slice(3, 6);

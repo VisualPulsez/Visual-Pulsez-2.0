@@ -112,7 +112,7 @@ export const Header = () => {
               className="hover:text-blue-700 transition-colors cursor-pointer"
             >
               Testimonial
-            </a>founders
+            </a>
             <a
               onClick={() => handleScrollToSection("founders")}
               className="hover:text-blue-700 transition-colors cursor-pointer"
