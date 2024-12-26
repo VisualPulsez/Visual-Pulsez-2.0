@@ -100,7 +100,7 @@ export default function SigninPage() {
           transition={{ duration: 1 }}
           className="mt-4 text-center text-gray-600"
         >
-          Don't have an account?{" "}
+          Don&apos;t have an account?{" "}
           <a href="/auth/signup" className="text-purple-600 hover:text-purple-700 font-semibold">
             Sign Up
           </a>

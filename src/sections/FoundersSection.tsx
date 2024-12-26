@@ -6,7 +6,7 @@ import Image from "next/image";
 import prasad from "@/assets/prasad.jpg";
 import uzair from "@/assets/uzair.jpg";
 import vaishnavi from "@/assets/vaishnavi.jpg";
-import shantanu from "@/assets/shantanu.jpg";
+import shantanu from "@/assets/sk.jpg";
 
 const founders = [
     {
