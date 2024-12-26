@@ -12,7 +12,7 @@ export default function Signup() {
   const [formData, setFormData] = useState({
     name: "", surname: "", company: "", email: "", password: ""
   });
-  const [currentField, setCurrentField] = useState(null);
+  const [currentField, setCurrentField] = useState<string | null>(null);
   const [error, setError] = useState("");
   const [success, setSuccess] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -20,9 +20,8 @@ export default function Signup() {
   const handleInputChange = (e: { target: { name: any; value: any; }; }) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
-
-  const handleInputFocus = (field: string | React.SetStateAction<null>) => setCurrentField(field);
-  const handleInputBlur = () => setCurrentField(null);
+  const handleInputFocus = (field: string) => setCurrentField(field);
+    const handleInputBlur = () => setCurrentField(null);
 
   const handleSignup = async (e: { preventDefault: () => void; }) => {
     e.preventDefault();
@@ -43,20 +42,41 @@ export default function Signup() {
       }
       setSuccess(true);
     } catch (err) {
-      setError(err.message || "An error occurred. Please try again.");
+      if (err instanceof Error) {
+        setError(err.message);
+      } else {
+        setError("An unknown error occurred.");
+      }
     } finally {
       setLoading(false);
     }
   };
 
-  const formFields = [
-    { name: 'name', label: 'First Name', icon: User },
-    { name: 'surname', label: 'Last Name', icon: User },
-    { name: 'company', label: 'Company', icon: Building },
-    { name: 'email', label: 'Email', icon: Mail, type: 'email' },
-    { name: 'password', label: 'Password', icon: Lock, type: 'password' }
+  const formFields: Array<{
+    name: keyof FormData;
+    label: string;
+    icon: React.ComponentType<any>;
+    type?: string;
+  }> = [
+    { name: "name", label: "First Name", icon: User },
+    { name: "surname", label: "Last Name", icon: User },
+    { name: "company", label: "Company", icon: Building },
+    { name: "email", label: "Email", icon: Mail, type: "email" },
+    { name: "password", label: "Password", icon: Lock, type: "password" },
   ];
+  
 
+
+  interface FormData {
+    name: string;
+    surname: string;
+    company: string;
+    email: string;
+    password: string;
+  }
+  
+  
+  
   return (
     <div className="min-h-screen flex items-center justify-center bg-white p-4">
       <motion.div
@@ -101,6 +121,7 @@ export default function Signup() {
                       >
                         <field.icon className="h-4 w-4" />
                       </motion.div>
+                      
                       <Input
                         id={field.name}
                         name={field.name}

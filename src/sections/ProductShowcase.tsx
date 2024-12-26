@@ -6,9 +6,16 @@ import {
   Globe2, Search, Shield, BarChart3, Share2, Layout,
   Sparkles, Stars, Zap
 } from 'lucide-react';
+import { ReactNode } from "react";
+
+interface FloatingElementProps {
+  children: ReactNode;
+  index: number;
+}
 
 export const ProductShowcase = () => {
-  const [hoveredIndex, setHoveredIndex] = useState(null);
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+
 
   const features = [
     {
@@ -56,12 +63,12 @@ export const ProductShowcase = () => {
   ];
 
   // Floating background elements animation
-  const FloatingElement = ({ children, index }) => (
+  const FloatingElement: React.FC<FloatingElementProps> = ({ children, index }) => (
     <motion.div
       animate={{
         y: [-10, 10],
         x: [-5, 5],
-        scale: [1, 1.2, 1]
+        scale: [1, 1.2, 1],
       }}
       transition={{
         duration: 4,
@@ -138,16 +145,17 @@ export const ProductShowcase = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {features.map((feature, index) => (
             <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-              onHoverStart={() => setHoveredIndex(index)}
-              onHoverEnd={() => setHoveredIndex(null)}
-              whileHover={{ scale: 1.02 }}
-              className="relative group"
-            >
+            key={index}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: index * 0.1 }}
+            onHoverStart={() => setHoveredIndex(index)} // `index` is a number
+            onHoverEnd={() => setHoveredIndex(null)}    // Reset to `null`
+            whileHover={{ scale: 1.02 }}
+            className="relative group"
+          >
+          
               {/* Card Container */}
               <div className="relative p-8 bg-white rounded-2xl shadow-lg transition-all duration-300">
                 {/* Animated Border on Hover */}
