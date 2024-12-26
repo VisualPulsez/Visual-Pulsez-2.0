@@ -99,7 +99,7 @@ const TestimonialCard = ({ text, imageSrc, name, username, designation }) => {
         className="relative"
       >
         <div className="text-gray-800 mb-6 text-lg leading-relaxed font-medium">
-          "{text}"
+        &quot;{text}&quot;
         </div>
         <div className="flex items-center gap-4">
           <div className="relative">
