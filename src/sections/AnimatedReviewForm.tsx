@@ -2,12 +2,12 @@
 import React from "react";
 import { useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { 
-  Star, 
-  Upload, 
-  Github, 
-  Twitter, 
-  Linkedin, 
+import {
+  Star,
+  Upload,
+  Github,
+  Twitter,
+  Linkedin,
   Instagram,
   Camera,
   Sparkles,
@@ -28,9 +28,12 @@ const starDescriptions = {
 export const AnimatedReviewForm = () => {
   const [rating, setRating] = useState(0);
   const [hoverRating, setHoverRating] = useState(0);
-  const [imagePreview, setImagePreview] = useState(null);
+  const [imagePreview, setImagePreview] = useState<string | null>(null);
+
   const [formSubmitted, setFormSubmitted] = useState(false);
-  const fileInputRef = useRef(null);
+  const fileInputRef = useRef<HTMLInputElement | null>(null);
+
+  type SocialKey = keyof typeof formData;
 
   const [formData, setFormData] = useState({
     name: "",
@@ -41,19 +44,31 @@ export const AnimatedReviewForm = () => {
     linkedin: "",
     instagram: ""
   });
+  const starDescriptions: { [key: number]: { text: string; icon: JSX.Element } } = {
+    1: { text: "Could be better", icon: <ThumbsUp className="w-5 h-5" /> },
+    2: { text: "It's okay", icon: <ThumbsUp className="w-5 h-5" /> },
+    3: { text: "Pretty good!", icon: <Heart className="w-5 h-5" /> },
+    4: { text: "Really great!", icon: <Sparkles className="w-5 h-5" /> },
+    5: { text: "Absolutely amazing!", icon: <Award className="w-5 h-5" /> },
+  };
 
-  const handleImageUpload = (e) => {
-    const file = e.target.files[0];
+  const social: { key: SocialKey; placeholder: string } = {
+    key: "github", // example key
+    placeholder: "Enter GitHub URL"
+  };
+  const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
     if (file) {
       const reader = new FileReader();
       reader.onloadend = () => {
-        setImagePreview(reader.result);
+        setImagePreview(reader.result as string);
       };
       reader.readAsDataURL(file);
     }
   };
 
-  const handleSubmit = (e) => {
+
+  const handleSubmit = (e: { preventDefault: () => void; }) => {
     e.preventDefault();
     if (!formData.name || !formData.review) {
       alert("Please fill out all required fields.");
@@ -90,14 +105,14 @@ export const AnimatedReviewForm = () => {
           >
             <Sparkles className="w-16 h-16 mx-auto text-blue-600 mb-4" />
           </motion.div>
-          <motion.h1 
+          <motion.h1
             initial={{ y: -20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             className="text-4xl font-bold text-gray-800 mb-4"
           >
             Share Your Experience
           </motion.h1>
-          <motion.p 
+          <motion.p
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             className="text-gray-600 text-lg"
@@ -110,7 +125,7 @@ export const AnimatedReviewForm = () => {
           {/* Profile Image Upload */}
           <div className="flex flex-col items-center mb-8">
             <label className={`${labelClasses} text-center mb-4`}>Profile Picture</label>
-            <motion.div 
+            <motion.div
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="relative"
@@ -120,11 +135,11 @@ export const AnimatedReviewForm = () => {
                 className="w-36 h-36 rounded-full border-3 border-dashed border-blue-400 flex items-center justify-center cursor-pointer overflow-hidden bg-gray-50 hover:bg-blue-50 transition-colors"
               >
                 {imagePreview ? (
-                  <motion.img 
+                  <motion.img
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
-                    src={imagePreview} 
-                    alt="Preview" 
+                    src={imagePreview}
+                    alt="Preview"
                     className="w-full h-full object-cover"
                   />
                 ) : (
@@ -159,11 +174,10 @@ export const AnimatedReviewForm = () => {
                   onMouseLeave={() => setHoverRating(0)}
                 >
                   <Star
-                    className={`w-10 h-10 ${
-                      (hoverRating || rating) >= star
-                        ? "fill-yellow-400 text-yellow-400"
-                        : "text-gray-300"
-                    }`}
+                    className={`w-10 h-10 ${(hoverRating || rating) >= star
+                      ? "fill-yellow-400 text-yellow-400"
+                      : "text-gray-300"
+                      }`}
                   />
                 </motion.button>
               ))}
@@ -185,8 +199,8 @@ export const AnimatedReviewForm = () => {
 
           {/* Personal Info */}
           <div className="grid md:grid-cols-2 gap-6">
-            <motion.div 
-              initial={{ opacity: 0, x: -20 }} 
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               className="space-y-2"
             >
@@ -199,8 +213,8 @@ export const AnimatedReviewForm = () => {
                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
               />
             </motion.div>
-            <motion.div 
-              initial={{ opacity: 0, x: 20 }} 
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               className="space-y-2"
             >
@@ -216,8 +230,8 @@ export const AnimatedReviewForm = () => {
           </div>
 
           {/* Review Text */}
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }} 
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             className="space-y-2"
           >
@@ -250,8 +264,8 @@ export const AnimatedReviewForm = () => {
                     type="text"
                     placeholder={social.placeholder}
                     className={`${inputClasses} pl-12`}
-                    value={formData[social.key]}
-                    onChange={(e) => setFormData({ ...formData, [social.key]: e.target.value })}
+                    value={formData[social.key as keyof typeof formData]}  // Type assertion
+                    onChange={(e) => setFormData({ ...formData, [social.key as keyof typeof formData]: e.target.value })}
                   />
                 </div>
               </motion.div>

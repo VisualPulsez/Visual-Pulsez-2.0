@@ -1,5 +1,4 @@
-"use client";
-
+"use client"
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import {
@@ -66,7 +65,7 @@ const pricingTiers = [
 ];
 
 export const Pricing = () => {
-  const [hoveredCard, setHoveredCard] = useState(null);
+  const [hoveredCard, setHoveredCard] = useState<number | null>(null); // Explicitly typing the state as number or null
 
   return (
     <section id="pricing" className="py-24 relative overflow-hidden bg-gray-50">

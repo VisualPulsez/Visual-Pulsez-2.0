@@ -3,7 +3,8 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Twitter, Instagram, Linkedin, Youtube, Github, ExternalLink, Heart, MapPin } from "lucide-react";
 
-export const Footer = () => {
+export const Footer = () =>
+{
   const navLinks = [
     { name: "About", href: "#" },
     { name: "Features", href: "#" },
@@ -54,7 +55,7 @@ export const Footer = () => {
       scale: 1.1,
       color: "#ffffff",
       transition: { duration: 0.2 }
-    }
+    } // Closing brace added here
   };
 
   const socialVariants = {
@@ -221,6 +222,4 @@ export const Footer = () => {
       </motion.div>
     </footer>
   );
-};
-
-export default Footer;
+}
