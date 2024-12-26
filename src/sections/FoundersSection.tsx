@@ -7,13 +7,14 @@ import prasad from "@/assets/prasad.jpg";
 import uzair from "@/assets/uzair.jpg";
 import vaishnavi from "@/assets/vaishnavi.jpg";
 // import shantanu from "@/assets/shantanu.jpg";
+
 const founders = [
     {
         name: "Prasad Pawar",
         title: "Co-Founder & CEO",
         photo: prasad,
         opinion:
-            "At Visual Pulsez, we help businesses unlock their full potential through creative and impactful social media strategies. From designing stunning content to running targeted ad campaigns, we ensure your brand stands out and connects with the right audience.",
+            "At Visual Pulsez, we help businesses unlock their full potential through creative and impactful social media strategies. From designing stunning content to running targeted ad campaigns, we ensure your brand stands out and connects with the&nbsp;right&nbsp;audience.",
         socialLink: "https://linkedin.com/in/alice",
     },
     {
@@ -29,9 +30,9 @@ const founders = [
         title: "Co-Founder & COO",
         photo: vaishnavi,
         opinion:
-            "At Visual Pulsez, we ignite your brand's online presence through innovative social media solutions. Our experts craft compelling content, develop tailored strategies, and execute precision-driven campaigns to amplify your reach, engagement, and conversions. Let us help you captivate your audience, drive growth, and leave a lasting impression in the digital landscape.",
+            "At Visual Pulsez, we ignite your brand's online presence through innovative social media solutions. Our experts craft compelling content, develop tailored strategies, and execute precision-driven campaigns to amplify your reach, engagement, and conversions. Let us help you captivate your audience, drive growth, and leave a lasting impression in the digital&nbsp;landscape.",
         socialLink: "https://linkedin.com/in/clara",
-    }
+    },
 //     {
 //         name: "Shantanu Kulkarni",
 //         title: "Co-Founder & CTO",
@@ -69,13 +70,12 @@ export const FoundersSection = () => {
                         >
                             <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-gray-600 opacity-0 group-hover:opacity-10 transition-opacity"></div>
                             <Image
-    src={founder.photo}
-    alt={founder.name}
-    width={96} // Set a fixed width
-    height={96} // Set a fixed height
-    className="mx-auto rounded-full border-4 border-gray-100 shadow-md transition-all object-cover"
-/>
-
+                                src={founder.photo}
+                                alt={founder.name}
+                                width={96} // Set a fixed width
+                                height={96} // Set a fixed height
+                                className="mx-auto rounded-full border-4 border-gray-100 shadow-md transition-all object-cover"
+                            />
 
                             <h3
                                 className="mt-6 text-xl font-semibold text-gray-800 group-hover:text-blue-600 transition-colors"
@@ -84,7 +84,7 @@ export const FoundersSection = () => {
                             </h3>
                             <p className="text-sm text-gray-600 mt-2">{founder.title}</p>
                             <blockquote className="mt-4 text-gray-700 italic">
-                                "{founder.opinion}"
+                                &quot;{founder.opinion}&quot;
                             </blockquote>
                             <a
                                 href={founder.socialLink}
@@ -94,7 +94,6 @@ export const FoundersSection = () => {
                             >
                                 <FaLinkedin size={24} />
                             </a>
-
                         </div>
                     ))}
                 </div>

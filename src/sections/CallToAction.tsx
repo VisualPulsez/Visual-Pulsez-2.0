@@ -1,9 +1,9 @@
 "use client";
 
 import React, { useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform, } from "framer-motion";
 import { ArrowRight, Sparkles, Star, Rocket } from "lucide-react";
-
+import Image from "next/image";
 export const CallToAction = () => {
   const sectionRef = useRef(null);
   const buttonRef = useRef(null);
@@ -170,9 +170,11 @@ export const CallToAction = () => {
                     className="w-8 h-8 rounded-full bg-gray-200 border-2 border-white flex items-center justify-center text-xs font-semibold"
                   >
                     {/* Placeholder for user avatars */}
-                    <img 
+                    <Image
                       src="/api/placeholder/32/32"
                       alt="User avatar"
+                      width={32}
+                      height={32}
                       className="w-full h-full rounded-full object-cover"
                     />
                   </div>

@@ -15,10 +15,10 @@ export const ContactSection = () => {
       <div className="max-w-6xl mx-auto px-4 relative z-10">
         <div className="text-center mb-12">
           <h2 className="text-5xl font-extrabold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent animate-fade-in">
-            Let's Connect
+            Let&apos;s Connect
           </h2>
           <p className="text-gray-700 mt-4 text-lg animate-fade-in delay-300">
-            Reach out through any of these platforms - I'd love to hear from you!
+            Reach out through any of these platforms - I&apos;d love to hear from you!
           </p>
         </div>
 
