@@ -6,66 +6,68 @@ import { twMerge } from "tailwind-merge";
 import { motion, useAnimationControls, useScroll, useTransform } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import React, { useState, useEffect, useRef } from "react";
+import image from "@/assets/male.jpeg"
+import Fimage from "@/assets/female.jpeg"
 const testimonials = [
   {
     text: "Thanks to Visual Pulsez, our cafe is now the go-to spot in town. Their creative social media strategies have increased our footfall and made us a favorite among locals.",
-    imageSrc: "/api/placeholder/40/40",
+    imageSrc: image,
     name: "Ravi Malhotra",
     username: "@raviscafe",
     designation: "Owner, Cozy Cafe"
   },
   {
     text: "Visual Pulsez helped us transform our small bakery into an online sensation. Their digital marketing efforts have boosted our sales and attracted customers from neighboring areas.",
-    imageSrc: "/api/placeholder/40/40",
+    imageSrc: Fimage,
     name: "Anjali Verma",
     username: "@anjalibakes",
     designation: "Founder, Sweet Cravings Bakery"
   },
   {
     text: "Our supermarket's digital presence was nonexistent until we partnered with Visual Pulsez. Their targeted campaigns and creative content have made us a household name in our community.",
-    imageSrc: "/api/placeholder/40/40",
+    imageSrc: image,
     name: "Manoj Patel",
     username: "@manojsupershop",
     designation: "Owner, Patel Supermarket"
   },
   {
     text: "Visual Pulsez gave our restaurant a new lease on life by bringing us into the digital era. Their engaging social media content has doubled our weekend reservations.",
-    imageSrc: "/api/placeholder/40/40",
+    imageSrc: Fimage,
     name: "Kavita Nair",
     username: "@nairfoodies",
     designation: "Manager, Spice Villa"
   },
   {
     text: "We run a small flower shop, and Visual Pulsez has helped us connect with customers online like never before. Their work has brought us visibility and loyal customers.",
-    imageSrc: "/api/placeholder/40/40",
+    imageSrc: Fimage,
     name: "Neha Singh",
     username: "@nehasblooms",
     designation: "Owner, Bloom & Petal"
   },
   {
     text: "Our bookstore now gets more visitors than ever, thanks to Visual Pulsez's creative campaigns. They made us realize how powerful a strong online presence can be.",
-    imageSrc: "/api/placeholder/40/40",
+    imageSrc: image,
     name: "Arjun Khanna",
     username: "@arjunreads",
     designation: "Owner, Tales & Chapters Bookstore"
   },
   {
     text: "As a local grocery shop, we never imagined we’d have an online presence. Visual Pulsez not only made it possible but also brought us a steady increase in online orders.",
-    imageSrc: "/api/placeholder/40/40",
+    imageSrc: image,
     name: "Suresh Yadav",
     username: "@sureshgrocery",
     designation: "Owner, Fresh Basket"
   },
   {
     text: "Our small restaurant gained a lot of traction after Visual Pulsez revamped our digital strategy. Their creative marketing has made us a must-visit spot in town.",
-    imageSrc: "/api/placeholder/40/40",
+    imageSrc: Fimage,
     name: "Farah Ahmed",
     username: "@farahscuisine",
-    designation: "Owner, Farah’s Kitchen"
+    designation: "Owner, Farah &apos;s Kitchen"
   },
   {
     text: "Visual Pulsez has helped us create a brand identity online that resonates with our local audience. Their expertise has brought our clothing store into the spotlight.",
-    imageSrc: "/api/placeholder/40/40",
+    imageSrc: image,
     name: "Aditya Mehta",
     username: "@adityafashion",
     designation: "Owner, Mehta Fashions"
@@ -255,4 +257,3 @@ export const Testimonials = () => {
   );
 };
 
-export default Testimonials;
