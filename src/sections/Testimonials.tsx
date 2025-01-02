@@ -6,12 +6,12 @@ import { twMerge } from "tailwind-merge";
 import { motion, useAnimationControls, useScroll, useTransform } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import React, { useState, useEffect, useRef } from "react";
-import image from "@/assets/male.jpeg"
+import Mimage from "@/assets/male.jpeg"
 import Fimage from "@/assets/female.jpeg"
 const testimonials = [
   {
     text: "Thanks to Visual Pulsez, our cafe is now the go-to spot in town. Their creative social media strategies have increased our footfall and made us a favorite among locals.",
-    imageSrc: image,
+    imageSrc: Mimage,
     name: "Ravi Malhotra",
     username: "@raviscafe",
     designation: "Owner, Cozy Cafe"
@@ -25,7 +25,7 @@ const testimonials = [
   },
   {
     text: "Our supermarket's digital presence was nonexistent until we partnered with Visual Pulsez. Their targeted campaigns and creative content have made us a household name in our community.",
-    imageSrc: image,
+    imageSrc: Mimage,
     name: "Manoj Patel",
     username: "@manojsupershop",
     designation: "Owner, Patel Supermarket"
@@ -46,14 +46,14 @@ const testimonials = [
   },
   {
     text: "Our bookstore now gets more visitors than ever, thanks to Visual Pulsez's creative campaigns. They made us realize how powerful a strong online presence can be.",
-    imageSrc: image,
+    imageSrc: Mimage,
     name: "Arjun Khanna",
     username: "@arjunreads",
     designation: "Owner, Tales & Chapters Bookstore"
   },
   {
     text: "As a local grocery shop, we never imagined we’d have an online presence. Visual Pulsez not only made it possible but also brought us a steady increase in online orders.",
-    imageSrc: image,
+    imageSrc: Mimage,
     name: "Suresh Yadav",
     username: "@sureshgrocery",
     designation: "Owner, Fresh Basket"
@@ -67,7 +67,7 @@ const testimonials = [
   },
   {
     text: "Visual Pulsez has helped us create a brand identity online that resonates with our local audience. Their expertise has brought our clothing store into the spotlight.",
-    imageSrc: image,
+    imageSrc: Mimage,
     name: "Aditya Mehta",
     username: "@adityafashion",
     designation: "Owner, Mehta Fashions"
