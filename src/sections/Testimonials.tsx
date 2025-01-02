@@ -1,7 +1,7 @@
 "use client"
 
 
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import { twMerge } from "tailwind-merge";
 import { motion, useAnimationControls, useScroll, useTransform } from "framer-motion";
 import { useInView } from "react-intersection-observer";
@@ -80,12 +80,11 @@ const secondColumn = testimonials.slice(3, 6);
 const thirdColumn = testimonials.slice(6, 9);
 type Testimonial = {
   text: string;
-  imageSrc: string;
+  imageSrc: string | StaticImageData; // Allow both string and StaticImageData types
   name: string;
   username: string;
   designation: string;
 };
-
 
 const TestimonialCard: React.FC<Testimonial> = ({ text, imageSrc, name, username, designation }) => {
   const [ref, inView] = useInView({
